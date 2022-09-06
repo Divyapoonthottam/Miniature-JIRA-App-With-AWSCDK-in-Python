@@ -90,7 +90,7 @@ def handler(event, context):
         name = event["projectmanager"]
         projectname = event["projectname"]  
         groupmembers = event["groupmembers"]   
-        source = event["createdby"] 
+        source = event["createdby"] # email id of project manager/project creator
         subject = 'projectupdate'
 
         body = f"""<html>
@@ -103,7 +103,7 @@ def handler(event, context):
             </html>
             """
     
-        destination = groupmembers 
+        destination = groupmembers #[group members email id ]
 
         _message = "Message from: " + name + "\nEmail: " + source + "\nMessage content: " + "added to new project"    
         
